@@ -14,9 +14,13 @@ class CallTouchLeads extends Component{
 
     datas = new CallTouchApi();
 
+    
+
     updateData = () => {
+        let dateFrom = '14/09/2022';
+        let dateTo = '14/09/2022'
         this.datas
-            .getAlldata('14/09/2022', '14/09/2022')
+            .getAlldata(dateFrom, dateTo)
             .then(res => {
                 this.setState({
                     countCalls: res.length

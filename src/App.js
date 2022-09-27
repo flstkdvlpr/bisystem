@@ -6,7 +6,7 @@ import CallTouchApi from './services/CallTouchAPI';
 
 const data = new CallTouchApi();
 
-data.getAlldata().then(res => console.log(res.length))
+data.getAlldata('16/09/2022','16/09/2022').then(res => console.log(res))
 
 function App() {
   return (
