@@ -12,8 +12,8 @@ class CallTouchApi {
         return await res.json();
     }
 
-    getAlldata = () =>{
-        return this.getResource(`http://api.calltouch.ru/calls-service/RestAPI/41648/calls-diary/calls?clientApiId=${this._apiKey}&dateFrom=16/09/2022&dateTo=16/09/2022`)
+    getAlldata = (dateUp, dateBefore) =>{
+        return this.getResource(`http://api.calltouch.ru/calls-service/RestAPI/41648/calls-diary/calls?clientApiId=${this._apiKey}&dateFrom=${dateUp}&dateTo=${dateBefore}`)
     }
 }
 
