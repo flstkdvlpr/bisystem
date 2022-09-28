@@ -1,8 +1,8 @@
 import './App.css';
 
 import CallTouchLeads from './components/CallTouch/CallTouch';
-
 import CallTouchApi from './services/CallTouchAPI';
+import Header from './components/Header/Header';
 
 const data = new CallTouchApi();
 
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <Header />
       </header>
       <CallTouchLeads />
     </div>
