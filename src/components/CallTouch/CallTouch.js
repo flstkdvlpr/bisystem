@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CallTouchApi from "../../services/CallTouchAPI";
+import "./callTouch.scss";
 
 class CallTouchLeads extends Component{
 
@@ -15,13 +16,13 @@ class CallTouchLeads extends Component{
         countGoogleAds: null,
         countGoogleOrganic: null,
         conuntReferalCalls: null,
-        counOtherCalls: null
+        counOtherCalls: null,
+        callbackCall: null
     }
 
     datas = new CallTouchApi();
 
     
-
     updateData = () => {
         let dateFrom = '27/06/2022';
         let dateTo = '27/09/2022'
@@ -40,19 +41,47 @@ class CallTouchLeads extends Component{
 
                 })
             })
+        
     } 
 
     render() {
         const {countCalls, countYandexDirect, countYandexOrganic, countGoogleAds, countGoogleOrganic, conuntReferalCalls, counOtherCalls} = this.state;
         return(
             <>
-                <p>Всего звонков: {countCalls}</p>
-                <p>Звонки с Яндекс.Директа: {countYandexDirect}</p>
-                <p>Звонки с Поиска Яндекс: {countYandexOrganic}</p>
-                <p>Звонки с Google.Ads: {countGoogleAds}</p>
-                <p>Звонки с Поиска Google: {countGoogleOrganic}</p>
-                <p>Звонки с реферальных ссылок: {conuntReferalCalls}</p>
-                <p>Звонки с без источника: {counOtherCalls}</p>
+            <div className="allcalls">
+                <div className="module-calls">
+                    <div className="module-calls__tittle">
+                        Всего звонков: {countCalls} 
+                    </div>
+                    <div className="module-calls__subtittle">
+                        Звонки по источникам:
+                    </div>
+                    <ul className="module-calls__list">
+                        <li>Яндекс.Директ: {countYandexDirect}</li>
+                        <li>Поиск Яндекс: {countYandexOrganic}</li>
+                        <li>Google.Ads: {countGoogleAds}</li>
+                        <li>Поиск Google: {countGoogleOrganic}</li>
+                        <li>Реферальные ссылки: {conuntReferalCalls}</li>
+                        <li>Без источника: {counOtherCalls}</li>
+                    </ul>
+                </div>
+                <div className="module-calls">
+                    <div className="module-calls__tittle">
+                        Всего звонков: {countCalls} 
+                    </div>
+                    <div className="module-calls__subtittle">
+                        Звонки по источникам:
+                    </div>
+                    <ul className="module-calls__list">
+                        <li>Яндекс.Директ: {countYandexDirect}</li>
+                        <li>Поиск Яндекс: {countYandexOrganic}</li>
+                        <li>Google.Ads: {countGoogleAds}</li>
+                        <li>Поиск Google: {countGoogleOrganic}</li>
+                        <li>Реферальные ссылки: {conuntReferalCalls}</li>
+                        <li>Без источника: {counOtherCalls}</li>
+                    </ul>
+                </div>
+            </div>
             </>
         )
     }
