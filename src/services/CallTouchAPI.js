@@ -13,7 +13,7 @@ class CallTouchApi {
     }
 
     getAlldata = (dateUp, dateBefore) =>{
-        return this.getResource(`http://api.calltouch.ru/calls-service/RestAPI/41648/calls-diary/calls?clientApiId=${this._apiKey}&dateFrom=${dateUp}&dateTo=${dateBefore}`)
+        return this.getResource(`http://api.calltouch.ru/calls-service/RestAPI/41648/calls-diary/calls?clientApiId=${this._apiKey}&dateFrom=${dateUp}&dateTo=${dateBefore}&page=1&limit=1000`)
     }
 }
 
